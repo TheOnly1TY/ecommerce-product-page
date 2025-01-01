@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/src/style.css">
+
+  <title>E-commerce product page</title>
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav--menu">
+        <div class="hamburger--menu">
+          <div class="openContainer"> <img src="images/icon-menu.svg" class="activeMenu" id="open--menu"
+              alt="Hamburger Menu"></div>
+          <div class="closeContainer"> <img src="images/icon-close.svg" class="close_menu" id="close--menu"
+              alt="Close Menu">
+          </div>
+        </div>
+        <span class="logoName">
+          <img src="images/logo.svg" alt="">
+        </span>
+        <ul class="nav__links hidden">
+          <li class="nav__link"><a href="#">Collections</a></li>
+          <li class="nav__link"><a href="#">Men</a></li>
+          <li class="nav__link"><a href="#">Women</a></li>
+          <li class="nav__link"><a href="#">About</a></li>
+          <li class="nav__link"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="overlay hidden"></div>
+      <div class="util--nav">
+        <div class="cart">
+          <img src="images/icon-cart.svg" alt="Cart Icon" id="cartIcon">
+          <span id="orderNum"></span>
+        </div>
+        <img src="images/image-avatar.png" id="avatar" alt="User Avatar">
+      </div>
+    </nav>
+    <!-- CART SECTION -->
+    <aside class="cart--wrapper ">
+      <div class="cart--container invisible">
+        <span class="cart--name">
+          <p>Cart</p>
+        </span>
+        <hr>
+        <div class="cart--content">
+          <span class="emptyText">Your cart is empty.</span>
+          <div class="displayOrder" style="display: none;">
+            <div class="orderInfo-container">
+              <figure class="orderImage">
+                <img src="images/image-product-1-thumbnail.jpg" alt="">
+              </figure>
+              <div class="orderInfo">
+                <p class="name">Fall Limited Edition Sneakers</p>
+                <p class="price"><span class="defaultPrice">$125.00</span> × <span class="numOfItem"></span> <span
+                    class="total-amount"></span></p>
+              </div>
+              <figure class="deleteIcon">
+                <img src="images/icon-delete.svg">
+              </figure>
+            </div>
+            <button class="order--btn">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  <hr>
+  <main>
+    <div class="sliderContainer">
+      <div class="slider-wrapper mainSliderContainer">
+        <div class="slide slide-1" id="slide--1"><img src="images/image-product-1.jpg" alt="Image Slide"></div>
+        <div class="slide slide-2 hiddenslide" id="slide--2"><img src="images/image-product-2.jpg" alt="Image Slide">
+        </div>
+        <div class="slide slide-3 hiddenslide" id="slide--3"><img src="images/image-product-3.jpg" alt="Image Slide">
+        </div>
+        <div class="slide slide-4 hiddenslide" id="slide--4"><img src="images/image-product-4.jpg" alt="Image Slide">
+        </div>
+      </div>
+      <div class="slidePagination">
+
+        <div class="slidepage pag--1 activePagination"> <img src="images/image-product-1-thumbnail.jpg"
+            data-main="slide--1" class="pagination"></div>
+        <div class="slidepage pag--2"> <img src="images/image-product-2-thumbnail.jpg" data-main="slide--2"
+            class=" pagination"></div>
+        <div class="slidepage pag--3"> <img src="images/image-product-3-thumbnail.jpg" data-main="slide--3"
+            class="pagination">
+        </div>
+        <div class="slidepage pag--4"> <img src="images/image-product-4-thumbnail.jpg" data-main="slide--4"
+            class="pagination">
+        </div>
+      </div>
+      <div class="slideButton">
+        <div class="prev mainPrev"><img src="images/icon-previous.svg" alt=""></div>
+        <div class="next mainNext"><img src="images/icon-next.svg" alt=""></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="itemInfo">
+        <h3 class="companyName">Sneaker Company</h3>
+        <h1 class="title">Fall Limited Edition Sneakers</h1>
+        <p class="subtitle">These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+      </div>
+      <div class="itemPrice">
+        <div class="currentPrice">
+          <p class="mainPrice">$125.00</p>
+          <span class="percent">50%</span>
+        </div>
+        <div class="previousPrice">$250.00</div>
+      </div>
+      <div class="item-btn__container">
+        <div class="itemControls">
+          <img src="images/icon-minus.svg" class="decrease">
+          <p id="count">0</p>
+          <img src="images/icon-plus.svg" class="increase">
+        </div>
+        <div class="itemBtn"><img src="images/icon-cart.svg">Add to cart</div>
+      </div>''
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="modalLightBox hideLightBox">
+      <div class="sliderContainer">
+        <div class="slider-wrapper">
+          <div class="slide slide-1" id="slide--1"><img src="images/image-product-1.jpg" alt="Image Slide">
+          </div>
+          <div class="slide slide-2 hiddenslide" id="slide--2"><img src="images/image-product-2.jpg" alt="Image Slide">
+          </div>
+          <div class="slide slide-3 hiddenslide" id="slide--3"><img src="images/image-product-3.jpg" alt="Image Slide">
+          </div>
+          <div class="slide slide-4 hiddenslide" id="slide--4"><img src="images/image-product-4.jpg" alt="Image Slide">
+          </div>
+        </div>
+        <div class="slidePagination modalPagination">
+          <div class="slidepage pag--1 activePagination"> <img src="images/image-product-1-thumbnail.jpg"
+              data-main="slide--1" class="pagination"></div>
+          <div class="slidepage pag--2"> <img src="images/image-product-2-thumbnail.jpg" data-main="slide--2"
+              class=" pagination"></div>
+          <div class="slidepage pag--3"> <img src="images/image-product-3-thumbnail.jpg" data-main="slide--3"
+              class="pagination"></div>
+          <div class="slidepage pag--4"> <img src="images/image-product-4-thumbnail.jpg" data-main="slide--4"
+              class="pagination"></div>
+        </div>
+        <div class="slideButton">
+          <div class="modalPrev prev"><img src="images/icon-previous.svg"></div>
+          <div class="modalNext next"><img src="images/icon-next.svg"></div>
+
+          <div class="closeIcon modalCloseIcon">
+            <img src="images/icon-close.svg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="lightbox-overlay hideOverlay"></div>
+  </main>
+</body>
+<!-- JAVASCRIPT -->
+<script defer src="/src/script.js"></script>
+
+</html>
